@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.5ikankan.com/"
   s.license      = "MIT"
   s.author             = { "wenzhaot" => "tanwenzhao1025@gmail.com" }
-  s.source       = { :git => "https://github.com/wenzhaot/AstraeaSwift.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/wenzhaot/astraea-sdk-swift.git", :tag => "#{s.version}" }
 
   s.ios.deployment_target = '8.0'
   s.vendored_frameworks = 'AstraeaSwift.framework'
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.dependency 'AstraeaVendor'
   s.dependency 'TPKeyboardAvoiding'
   s.dependency 'PureLayout'
-  s.dependency 'SDWebImage', '~>3.8'
+  s.dependency 'SDWebImage'
   s.dependency 'Proposer', '~> 1.1.0'
   s.dependency 'MJRefresh'
   s.dependency 'Moya/RxSwift'
