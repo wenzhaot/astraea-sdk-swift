@@ -83,3 +83,41 @@ AppConfig.fetchActiveUsers { (users, error) in
 
 }
 ```
+### 获取动态列表
+- 使用框架提供的界面
+```
+let momentsVc = MomentsViewController()
+navigationController?.pushViewController(momentsVc, animated: true)
+```
+![截图2]
+- 使用框架提供的数据，需要自己定制页面
+```
+AppConfig.fetchMoments(pageSize: 1) { (moments, error) in
+            
+}
+```
+### 获取在线用户数
+```
+AppConfig.fetchUserCount(completion: { (count, error) in
+    if let er = error {
+        self.numLabel.text = er.userInfo[NSLocalizedDescriptionKey] as? String
+    } else {
+        self.numLabel.text = "\(count)"
+    }
+})
+```
+### 夜间模式
+框架内页面支持白天/夜间模式，可以自由配置
+```
+AppConfig.setNightMode(isNight: sender.isOn)
+```
+## 重要！提交到AppStore
+### 由于框架内部分机制可能审核不通过，所以需要对框架进行上线前影藏操作，上线后再开放该功能
+### 由于Appstore禁止不使用广告而采集IDFA的app上架，SDK中采集IDFA是为了获得更精确的新闻推荐。如果您的应用使用SDK而未集成任何广告服务，请按照下图填写Appstore中的IDFA选项：
+![图片]
+- serve advertisements within the app服务应用中的广告。如果你的应用中集成了广告的时候，你需要勾选这一项。
+- Attribute this app installation to a previously served advertisement.跟踪广告带来的安装。
+- Attribute an action taken within this app to a previously served advertisement跟踪广告带来的用户的后续行为。
+- Limit Ad Tracking setting in iOS这一项下的内容其实就是对你的应用使用idfa的目的做下确认，只要你选择了采集idfa，那么这一项都是需要勾选的。
+
+如果您仍因为采集IDFA被Appstore审核拒绝，建议您集成任意一家广告SDK，上线后可以控制其关闭展示。
