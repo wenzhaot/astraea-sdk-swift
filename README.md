@@ -27,6 +27,18 @@ use_frameworks!
 target '<Your Target Name>' do
     pod 'AstraeaSwift'
 end
+
+pre_install do |installer|
+    def installer.verify_no_static_framework_transitive_dependencies; end
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ENABLE_BITCODE'] = 'NO'
+        end
+    end
+end
 ```
 ### 注意
 框架内部依赖一些第三方框架，如果冲突可以适当进行删除和修改。
