@@ -111,6 +111,18 @@ AppConfig.fetchUserCount(completion: { (count, error) in
 ```
 AppConfig.setNightMode(isNight: sender.isOn)
 ```
+### 分享回调
+```
+func willBeginShare(with shareLink: String, title: String, summary: String, imageUrl: String, from controller: UIViewController?) {
+        
+}
+```
+### 播放视频回调
+```
+func willPlayVideo(with url: String, from controller: UIViewController?) {
+        
+}
+```
 ## 重要！提交到AppStore
 ### 由于框架内部分机制可能审核不通过，所以需要对框架进行上线前影藏操作，上线后再开放该功能
 ### 由于Appstore禁止不使用广告而采集IDFA的app上架，SDK中采集IDFA是为了获得更精确的新闻推荐。如果您的应用使用SDK而未集成任何广告服务，请按照下图填写Appstore中的IDFA选项：
