@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "AstraeaSwift"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Astraea swift sdk"
   s.description  = <<-DESC
   Astraea swift sdk for users
@@ -14,6 +14,10 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
   s.vendored_frameworks = 'AstraeaSwift.framework'
+
+  s.source_files  = 'Agora/*.{h,m}'
+  s.public_header_files = 'Agora/*.h'
+  s.vendored_libraries = ['Agora/*.a']
 
   s.dependency 'YYCache'
   s.dependency 'TPKeyboardAvoiding'
