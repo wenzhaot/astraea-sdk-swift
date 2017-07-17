@@ -142,9 +142,25 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
-@class UICollectionView;
 @class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC12AstraeaSwift21AccountViewController")
+@interface AccountViewController : UIViewController
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)updateViewConstraints;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface AccountViewController (SWIFT_EXTENSION(AstraeaSwift))
+@end
+
+@class UICollectionView;
 
 SWIFT_CLASS("_TtC12AstraeaSwift21AnchorsViewController")
 @interface AnchorsViewController : UIViewController
@@ -179,6 +195,14 @@ SWIFT_CLASS("_TtC12AstraeaSwift9AppConfig")
 + (void)startWith:(NSString * _Nullable)userId;
 + (void)setAppConfigDelegateWithDelegate:(id <AppConfigDelegate> _Nullable)delegate;
 + (void)logout;
+/// A Boolean value indicating whether the share action is enable. default ‘false’
+/// \param enable If true, you must implement the AppConfigDelegate
+///
++ (void)setShareEnableWithEnable:(BOOL)enable;
+/// A Boolean value indicating whether the sdk play video. default ‘false’
+/// \param isPlay If false, you must implement the AppConfigDelegate
+///
++ (void)setPlayVideoWithIsPlay:(BOOL)isPlay;
 /// Sets the night mode
 /// \param isNight true for night mode, otherwise day mode.
 ///
@@ -201,6 +225,8 @@ SWIFT_CLASS("_TtC12AstraeaSwift9AppConfig")
 + (void)fetchActiveUsersWithCompletion:(void (^ _Nonnull)(NSArray<User *> * _Nullable, NSError * _Nullable))completion;
 /// Fetches the moments data
 + (void)fetchMomentsWithPageSize:(NSInteger)pageSize completion:(void (^ _Nonnull)(NSArray<Moment *> * _Nullable, NSError * _Nullable))completion;
+/// Test
++ (void)updateUserInfoWith:(NSString * _Null_unspecified)jsonString;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
