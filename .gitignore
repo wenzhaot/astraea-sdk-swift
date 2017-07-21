@@ -5,3 +5,7 @@ Example/Catalog.xcworkspace
 /Agora/.DS_Store
 /.DS_Store
 /Example/.DS_Store
+/Example/Catalog/.DS_Store
+/Release/.DS_Store
+/Debug/.DS_Store
+/AstraeaSwift.framework/.DS_Store

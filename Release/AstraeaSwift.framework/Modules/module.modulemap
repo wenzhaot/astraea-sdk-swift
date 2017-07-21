@@ -1,0 +1,10 @@
+framework module AstraeaSwift {
+  umbrella header "AstraeaSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module AstraeaSwift.Swift {
+    header "AstraeaSwift-Swift.h"
+}

@@ -13,18 +13,21 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/wenzhaot/astraea-sdk-swift.git", :tag => "#{s.version}" }
 
   s.ios.deployment_target = '8.0'
-  s.vendored_frameworks = 'AstraeaSwift.framework'
+  s.vendored_frameworks = ['AstraeaSwift.framework']
 
   s.source_files  = 'Agora/*.{h,m}'
   s.public_header_files = 'Agora/*.h'
   s.vendored_libraries = ['Agora/*.a']
+
+  s.pod_target_xcconfig = {
+    'OTHER_LDFLAGS'          => '-framework "AstraeaSwift"'
+  }
 
   s.dependency 'YYCache'
   s.dependency 'TPKeyboardAvoiding'
   s.dependency 'UITableView+FDTemplateLayoutCell'
   s.dependency 'SwiftTheme'
   s.dependency 'AstraeaVendor'
-  s.dependency 'TPKeyboardAvoiding'
   s.dependency 'PureLayout'
   s.dependency 'SDWebImage'
   s.dependency 'Proposer', '~> 1.1.0'
