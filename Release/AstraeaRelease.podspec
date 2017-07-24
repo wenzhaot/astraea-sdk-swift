@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AstraeaRelease"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "A release version of AstraeaSwift."
   s.description  = <<-DESC
   Using release versio for astraea-sdk-swift
