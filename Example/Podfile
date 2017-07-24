@@ -2,11 +2,6 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'Catalog' do
-#  pod 'AstraeaSwift'
-#  pod 'AstraeaSwift', :path => '../'
-
-    pod 'AstraeaDebug', :path => '../', :configurations => ['Debug']
-    pod 'AstraeaRelease', :path => '../', :configurations => ['Release']
-#  pod 'FooDebug', :git => 'https://xxx/xxx/foo.git', :configurations => ['Debug']
-#  pod 'FooRelease', :git => 'https://xxx/xxx/foo.git', :configurations => ['Release']
+    pod 'AstraeaDebug', :configurations => ['Debug']
+    pod 'AstraeaRelease', :configurations => ['Release']
 end
